@@ -21,3 +21,15 @@ print("On testbranch-1")
 my_list = [64, 34, 25, 12, 22, 11, 90]
 bubble_sort(my_list)
 print("Sorted array is:", my_list)
+
+# 1. Reverse sorting
+def bubble_sort_reverse(arr):
+    n = len(arr)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            if arr[j] < arr[j + 1]:  # Reverse the comparison for descending order
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+        if not swapped:
+            break
