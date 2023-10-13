@@ -33,3 +33,17 @@ def bubble_sort_reverse(arr):
                 swapped = True
         if not swapped:
             break
+
+# 2. Return a new sorted list without modifying the original list
+def bubble_sort_new(arr):
+    sorted_arr = arr.copy()  # Create a copy to avoid modifying the original array
+    n = len(sorted_arr)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            if sorted_arr[j] > sorted_arr[j + 1]:
+                sorted_arr[j], sorted_arr[j + 1] = sorted_arr[j + 1], sorted_arr[j]
+                swapped = True
+        if not swapped:
+            break
+    return sorted_arr
